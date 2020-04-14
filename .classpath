@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="Java/src"/>
+	<classpathentry kind="lib" path="Java/out/artifacts/Java_jar/Departments.jar"/>
+	<classpathentry kind="lib" path="C:/jars/hamcrest-core-1.3.jar"/>
+	<classpathentry kind="lib" path="C:/jars/junit-4.13.jar"/>
+	<classpathentry kind="output" path="Java/out/production/Java"/>
+</classpath>

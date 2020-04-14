@@ -9,6 +9,9 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import helper.DepartmentHelper;
+import helper.EmployeeHelper;
+
 public class Main {
     // Keep length > 9
     private static final int Length = 50;
@@ -68,7 +71,7 @@ public class Main {
     private static void ManageDepartments() {
         Scanner input = new Scanner(System.in);
         try {
-            Department.printMenu(DepartmentList, Length);
+            DepartmentHelper.printMenu(DepartmentList, Length);
         } catch (Exception e) {
             System.out.print(e.getMessage());
             return;
@@ -85,14 +88,14 @@ public class Main {
                 selectDepartment(DepartmentList.get(index - 1));
             } else if(DepartmentList.size() + 1 == index){
                 // If entered next index add new department
-                Department.addNewDepartment(DepartmentList);
+                DepartmentHelper.addNewDepartment(DepartmentList);
             } else{
                 // invalid index so take as 0
                 return;
             }
 
             try {
-                Department.printMenu(DepartmentList, Length);
+                DepartmentHelper.printMenu(DepartmentList, Length);
             } catch (Exception e) {
                 System.out.print(e.getMessage());
                 return;
@@ -120,7 +123,7 @@ public class Main {
                     Employee.addNewEmployee(department);
                     break;*/
                 case 2:
-                    department.modifyEntry(Length);
+                    DepartmentHelper.modify(department, Length);
                     break;
                 case 3:
                     DepartmentList.remove(department);
@@ -136,7 +139,7 @@ public class Main {
 
     private static boolean PrintDepartmentOptions(Department department) {
         try {
-            department.print(Length);
+            DepartmentHelper.print(department, Length);
         } catch (Exception e) {
             System.out.print(e.getMessage());
             return true;
@@ -166,7 +169,7 @@ public class Main {
         Scanner input = new Scanner(System.in);
 
         try {
-            Employee.printMenu(department.EmployeeList, Length);
+        	EmployeeHelper.printMenu(department.EmployeeList, Length);
         } catch (Exception e) {
             System.out.print(e.getMessage());
             return;
@@ -183,14 +186,14 @@ public class Main {
                 selectEmployee(department, department.EmployeeList.get(index - 1));
             } else if(department.EmployeeList.size() + 1 == index){
                 // If entered next index add new department
-                Employee.AddNewEmployee(department);
+                EmployeeHelper.AddNewEmployee(department);
             } else{
                 // invalid index so take as 0
                 return;
             }
 
             try {
-                Employee.printMenu(department.EmployeeList, Length);
+            	EmployeeHelper.printMenu(department.EmployeeList, Length);
             } catch (Exception e) {
                 System.out.print(e.getMessage());
                 return;
@@ -211,7 +214,7 @@ public class Main {
         while (input.hasNextInt()) {
             switch (input.nextInt()) {
                 case 1:
-                    employee.modifyEntry(Length);
+                	EmployeeHelper.modify(employee, Length);
                     break;
                 case 2:
                     department.EmployeeList.remove(employee);
@@ -223,7 +226,7 @@ public class Main {
     }
 
     private static boolean PrintEmployeeOptions(Employee employee) {
-        employee.print(Length);
+    	EmployeeHelper.print(employee, Length);
 
         ArrayList<String> menuItems = new ArrayList<>();
         menuItems.add("Edit");

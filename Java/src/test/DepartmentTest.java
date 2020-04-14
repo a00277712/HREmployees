@@ -5,6 +5,8 @@ import model.Employee;
 
 import java.util.ArrayList;
 
+import helper.DepartmentHelper;
+
 public class DepartmentTest {
     public static void main(String[] args) throws Exception {
         Department testDepartment = new Department(1, "Test Name", "Test Location");
@@ -22,8 +24,8 @@ public class DepartmentTest {
         //testDepartment.modifyEntry(50);
         //testDepartment.print(50);
 
-        Department.printMenu(departmentList, 50);
-
+        DepartmentHelper.printMenu(departmentList, 50);
+        System.out.println();
         System.out.println(testDepartment.toString());
     }
 }

@@ -1,5 +1,6 @@
 package test;
 
+import helper.EmployeeHelper;
 import model.Department;
 import model.Employee;
 
@@ -16,11 +17,11 @@ public class EmployeeTest {
         //TestAddEmployeeToFromInput(testDepartment);
 
 
-        Employee.printMenu(testDepartment.EmployeeList, 50);
+        EmployeeHelper.printMenu(testDepartment.EmployeeList, 50);
     }
 
     private static void TestAddEmployeeToFromInput(Department testDepartment) {
-        Employee.AddNewEmployee(testDepartment);
+        EmployeeHelper.AddNewEmployee(testDepartment);
         System.out.print(testDepartment.EmployeeList.get(0));
     }
 }
