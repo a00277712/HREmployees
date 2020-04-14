@@ -10,8 +10,8 @@ public class EmployeeTest {
         Employee testEmployee = new Employee(1, "Test", "Employee", "E@m.il", "012345", "5.00", 1);
         testDepartment.addEmployee(testEmployee);
 
-        //testEmployee.modifyEntry(50);
-        //testEmployee.print(50);
+        //EmployeeHelper.modifyEntry(testEmployee, 50);
+        //EmployeeHelper.print(testEmployee, 50);
         //System.out.print(testEmployee.toString());
 
         //TestAddEmployeeToFromInput(testDepartment);

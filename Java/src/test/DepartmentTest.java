@@ -21,8 +21,8 @@ public class DepartmentTest {
         departmentList.add(testDepartment);
         departmentList.add(testDepartment2);
 
-        //testDepartment.modifyEntry(50);
-        //testDepartment.print(50);
+        //DepartmentHelper.modifyEntry(testDepartment, 50);
+        //DepartmentHelper.print(testDepartment, 50);
 
         DepartmentHelper.printMenu(departmentList, 50);
         System.out.println();
